@@ -122,13 +122,14 @@ caption, th, td {font-weight:strong;text-align:left;}
 #cats li a:hover, #cats li a.active {
 	border-bottom:solid 1px #ff3706;
 }
-#categories, #archives, #search {
+
+#projects, #search {
 	width:945px;
 	overflow:hidden;
 	padding:0;
 	border-bottom:solid 1px #ff3706;
 }
-#categories ul li, #archives ul li {
+#projects ul li {
 	font-size:11px;
 	float:left;
 	width:293px;
@@ -136,7 +137,7 @@ caption, th, td {font-weight:strong;text-align:left;}
 	line-height:20px;
 	height:20px;
 }
-#categories ul li a, #archives ul li a {
+#projects ul li a {
 	text-decoration:none !important;
 	display:block;
 	width:293px;
@@ -145,13 +146,14 @@ caption, th, td {font-weight:strong;text-align:left;}
 	border-bottom:solid 1px #FFF;
 	padding:0 10px;
 }
-#categories ul li a span, #archives ul li a span {
+#projects ul li a span {
 	float:right;
 }
-#categories ul li a:hover, #archives ul li a:hover {
+#projects ul li a:hover {
 	border-top:solid 1px #FF3706;
 	border-bottom:solid 1px #FF3706;
 }
+
 #main {
 	overflow:hidden;
 }
@@ -164,7 +166,8 @@ caption, th, td {font-weight:strong;text-align:left;}
 .li_container {
 	padding-top:30px;
 }
-#categories .li_container, #archives .li_container {
+
+#projects .li_container {
 	padding-top:0px;
 }
 li.article {
@@ -178,7 +181,8 @@ li.article {
 	margin-top:15px;
 	margin-bottom:15px;
 }
-#categories .li_container ul, #archives .li_container ul {
+
+#projects .li_container ul {
 }
 .article ul, .article ol {
 	margin-bottom:15px;

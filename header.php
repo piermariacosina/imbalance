@@ -59,33 +59,22 @@
             </div>
             <div id="cats">
             	<ul>
-                	<li><a href="<?php bloginfo("url"); ?>/" title=""<?php if ( is_front_page()) { ?> class="active"<?php } ?>>Home</a></li>
-                	<li><a href="#" rel="toggle[categories]" title="">Categories</a></li>
-                	<li><a href="#" rel="toggle[archives]" title="">Archives</a></li>
-                	<?php
-				    if ( function_exists( 'wp_nav_menu' ) ) {
-				    	wp_nav_menu( array( 'theme_location' => 'custom-menu' , 'container' => '' , 'fallback_cb'=> 'custom_menu' , 'depth' => 1 ) ); }
-				    else
-					    { custom_menu(); }
-					?>
+                	<li><a href="#" rel="toggle[projects]" title="" <?php if ( is_front_page()) { ?> class="active"<?php } ?> >Projects</a></li>
+                	<?php if ( function_exists( 'wp_nav_menu' ) ) {
+                		wp_nav_menu( array( 'menu' => 'Main menu' , 'container' => '' , 'fallback_cb'=> 'custom_menu' , 'depth' => 1 ) ); }
+                	else
+                	    { custom_menu(); }
+                	?>
                 	<li><a href="#" rel="toggle[search]" title="">Search</a></li>
                 </ul>
             </div>
         </div>
-        <div id="categories">
-            <ul class="mcol2">
-				  <?php
-                    $data = wp_list_categories('show_count=1&echo=0&title_li=&depth=1&hide_empty=0&orderby=ID');
-                    $data = preg_replace('/\<\/a\> \((.*)\)/',' <span>$1</span></a>',$data);
-                    echo $data;
+        <div id="projects">
+        		  <?php
+                  	wp_nav_menu( array( 'menu' => 'Project menu', 'container' => '' , 'menu_class' => 'mcol2' , 'fallback_cb'=> 'custom_menu' , 'depth' => 1 ) );
                   ?>
-            </ul>
         </div>
-        <div id="archives">
-            <ul class="mcol2">
-				  <?php wp_get_archives('type=monthly'); ?>
-            </ul>
-        </div>
+        
         <div id="search">
 			<?php get_search_form(); ?>
         </div>
