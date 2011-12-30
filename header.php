@@ -5,14 +5,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats please -->
 
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/reset.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts/fonts.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"><![endif]-->
     <!--[if IE 7]>
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/ie7.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie7.css" type="text/css" media="screen" />
     <![endif]-->
     <!--[if IE 6]>
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/ie6.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie6.css" type="text/css" media="screen" />
     <![endif]-->
     <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" type="image/x-icon" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
@@ -27,6 +28,7 @@
     <script src="<?php bloginfo('template_url'); ?>/js/columnize.js" type="text/javascript"></script>   
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/animatedcollapse.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/collapse.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.slideto.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
 

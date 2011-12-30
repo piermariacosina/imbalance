@@ -1,7 +1,6 @@
 /*  
 Theme Name: Imbalance
-Theme URI: http://www.wpshower.com
-Version: 1.19
+0Version: 1.19
 Description: Designed by <a href="http://www.wpshower.com">WPSHOWER</a>
 Author: WPSHOWER
 Author URI: http://www.wpshower.com
@@ -10,7 +9,7 @@ License: GNU/GPL Version 2 or later. http://www.gnu.org/licenses/gpl.html
 */
 body {
 	background-color:#FFF;
-	line-height:1.4 !important;
+	line-height:19px;
 }
 
 a:link, a:visited {
@@ -29,6 +28,8 @@ a:hover {
 }
 p {
 	margin-bottom:15px !important;
+	font-family: TitilliumText22LThin;
+	font-weight: lighter;
 }
 blockquote {
 	font-style:italic !important;
@@ -115,6 +116,11 @@ caption, th, td {font-weight:strong;text-align:left;}
 	margin-right: 25px;
 }
 #cats li a {
+	font-family: ApexSerifLightItalic;
+	font-size: 17px;
+	font-weight: lighter;
+	font-style: italic;
+	text-transform: uppercase;
 	float: left;
 	line-height: 50px;
 	text-decoration:none !important;
@@ -233,10 +239,13 @@ li.article .postmetadata a {
 	color:#FF3706 !important;
 }
 li.article h2 {
-	font-size:21px;
-	line-height:1.2;
+	font-family: ApexSerifLightItalic;
+	font-size: 30px;
+	text-transform: uppercase;
+	line-height:1;
 	margin-bottom:15px;
-	font-weight:normal;
+	font-weight: lighter;
+	font-style: italic;
 }
 li.article h2 a {
 	text-decoration:none !important;
@@ -245,26 +254,39 @@ li.article h2 a {
 	position:relative;
 }
 .article-over {
+	background: #000;
+	color: #e5e5e5;
 	position:absolute;
 	left:0;
 	top:0;
-	padding:15px;
+	padding-top:40px;
+	padding-bottom:40px;
+	padding-left:15px;
+	padding-right:60px;
+	height: 100%;
 }
+.article-over a{
+	color: #e5e5e5;
+	text-decoration: none;
+}
+
+.article-over p {
+	font-size: 16px;
+}
+
 .article .article-over {
-	display:none;
+/*	display:none;*/
 }
 #sidebar ul, #sidebar ol {
 	margin-left: 0px;
 }
 
-#sidebar .article:hover img, .li_container .article:hover img {
+#sidebar .article:hover img{
 	filter:alpha(opacity=10);
 	opacity: 0.1;
 	/* -moz-opacity:0.1; */
 }
-.article:hover .article-over {
-	display:block;
-}
+
 .single #sidebar {
 	width:305px;
 	padding-left:30px;
