@@ -1,14 +1,14 @@
 <?php get_header(); ?> 
-<?php get_sidebar(); ?>  
+<?php //get_sidebar(); ?>  
             <div id="main">
               <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 				<div class="entry">
-                <div class="postmetadata">
+               <!-- <div class="postmetadata">
                     <span>Published by</span> <?php the_author() ?><br />
                     <?php printf(__('<span>Filled under:</span> %s'), get_the_category_list(', ')); ?><br />
 					<?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments Closed') ); ?><br />
                     <?php edit_post_link(__('[Edit this entry]'), '<br />', ''); ?>
-                </div>
+                </div>-->
                 <h1><?php the_title(); ?></h1>
                 <div class="article" id="post-<?php the_ID(); ?>">
                     <?php the_content(); ?>

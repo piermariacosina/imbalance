@@ -51,6 +51,7 @@ caption, th, td {font-weight:strong;text-align:left;}
 
 
 #top {
+	display: none;
 	height: 120px;
 	margin-left: -61px;
 	padding-bottom: 17px;
@@ -70,6 +71,7 @@ caption, th, td {font-weight:strong;text-align:left;}
 	width: 364px;
 }
 #menu {
+	display:none;
 	height: 50px;
 	border-bottom:solid 1px #eeeeee;
 }
@@ -137,9 +139,11 @@ caption, th, td {font-weight:strong;text-align:left;}
 	border-bottom:solid 1px #ff3706;
 }
 #projects ul li {
-	font-size:11px;
+	font-size:12px;
+	font-family: TitilliumText22LThin;
+	margin-bottom: 3px;
 	float:left;
-	width:293px;
+	width:305px;
 	padding:0px;
 	line-height:20px;
 	height:20px;
@@ -147,18 +151,17 @@ caption, th, td {font-weight:strong;text-align:left;}
 #projects ul li a {
 	text-decoration:none !important;
 	display:block;
-	width:293px;
+	width:305px;
 	height:20px;
-	border-top:solid 1px #FFF;
-	border-bottom:solid 1px #FFF;
+	background-color: #fff;
 	padding:0 10px;
 }
 #projects ul li a span {
 	float:right;
 }
 #projects ul li a:hover {
-	border-top:solid 1px #FF3706;
-	border-bottom:solid 1px #FF3706;
+	background-color: #000;
+	color: #e5e5e5;
 }
 
 #main {
@@ -180,6 +183,7 @@ caption, th, td {font-weight:strong;text-align:left;}
 li.article {
 	margin-bottom:15px;
 	position:relative;
+	display: none;
 }
 .li_cont1, .li_cont2 {
 	margin-right:15px;

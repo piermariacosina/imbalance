@@ -11,7 +11,12 @@
        		jQuery("#top").slideto({highlight: false});
        	});
        	
+       	jQuery("#top").fadeIn(500);
+       	jQuery("#menu").fadeIn(900);
+       	
        	jQuery(".article").each(function(){
+       		jQuery(this).fadeIn(jQuery.randomBetween(500, 3000));
+       	
        		var padding_top = jQuery(this).children(".article-over").css("padding-top").replace("px", "");
        		
        		var padding_bottom = jQuery(this).children(".article-over").css("padding-bottom").replace("px", "");

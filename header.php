@@ -28,6 +28,7 @@
     <script src="<?php bloginfo('template_url'); ?>/js/columnize.js" type="text/javascript"></script>   
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/animatedcollapse.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/collapse.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.random.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.slideto.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
@@ -52,13 +53,13 @@
         	</div>
         </div>
         <div id="menu">
-            <div id="navicons">
+            <!--<div id="navicons">
                 <ul>
                     <li><a id="subscribe" href="<?php bloginfo('rss2_url'); ?>" title="">Subscribe</a></li>
                     <li><a id="twitter" href="<?php echo get_option('imbalance_twturl'); ?>" title="">Twitter</a></li>
                     <li><a id="facebook" href="<?php echo get_option('imbalance_fbkurl'); ?>" title="">Facebook</a></li>
                 </ul>
-            </div>
+            </div>-->
             <div id="cats">
             	<ul>
                 	<li><a href="#" rel="toggle[projects]" title="" <?php if ( is_front_page()) { ?> class="active"<?php } ?> >Projects</a></li>
