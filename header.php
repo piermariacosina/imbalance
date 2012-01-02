@@ -23,7 +23,13 @@
 
 	<?php wp_enqueue_script('jquery'); ?>
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-    <?php wp_head(); ?>
+	<?php wp_head(); ?>
+	<?php
+		if( is_home() ) {
+		wp_enqueue_script('jquery');
+		wp_enqueue_script('grid', get_template_directory_uri() . '/js/grid.js', 'jquery', false);
+		}
+	?> 
     <script src="<?php bloginfo('template_url'); ?>/js/columnizer.js" type="text/javascript"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/columnize.js" type="text/javascript"></script>   
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/animatedcollapse.js"></script>
@@ -69,6 +75,7 @@
                 	    { custom_menu(); }
                 	?>
                 	<li><a href="#" rel="toggle[search]" title="">Search</a></li>
+                	<li class="outside"><a href="/thedoersproject/theblog/ ?>" title="" >Go to Blog</a></li>
                 </ul>
             </div>
         </div>

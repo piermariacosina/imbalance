@@ -12,6 +12,8 @@ body {
 	line-height:19px;
 }
 
+::selection {background:#000; color:#e5e5e5;}
+
 a:link, a:visited {
 	color:#000;
 	text-decoration:underline;
@@ -129,14 +131,14 @@ caption, th, td {font-weight:strong;text-align:left;}
 	text-decoration:none !important;
 }
 #cats li a:hover, #cats li a.active {
-	border-bottom:solid 1px #ff3706;
+	border-bottom:solid 1px #FF398A;
 }
 
 #projects, #search {
 	width:945px;
 	overflow:hidden;
 	padding:0;
-	border-bottom:solid 1px #ff3706;
+	border-bottom:solid 1px #FF398A;
 }
 #projects ul li {
 	font-size:12px;
@@ -162,6 +164,20 @@ caption, th, td {font-weight:strong;text-align:left;}
 #projects ul li a:hover {
 	background-color: #000;
 	color: #e5e5e5;
+}
+
+.outside {
+	padding: 0px 10px 0px 10px;
+	color: #e5e5e5;
+	background-color: #000;
+}
+
+.outside a, .outside a:visited{
+	color: #e5e5e5;
+}
+
+.outside a:hover{
+	color: #FF398A;
 }
 
 #main {

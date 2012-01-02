@@ -12,17 +12,6 @@ add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 305, 9999 ); // 305 pixels wide by 380 pixels tall, set last parameter to true for hard crop mode
 add_image_size( 'background', 305, 9999 ); // Set thumbnail size
 
-// ===========================
-// = WordPress 3.0+ Nav Menu =
-// ===========================
-register_nav_menus(
-	array(
-	'custom-menu'=>__('Custom menu'),
-	)
-);
-function custom_menu(){
-	wp_list_pages('title_li=&depth=1');
-}
 
 // ==================================
 // = WP 3.0 Custom Background Setup =
