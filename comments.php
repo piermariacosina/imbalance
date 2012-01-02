@@ -66,7 +66,7 @@
 
 
 
-<h3 class="comments2"><?php comment_form_title( __('Leave a Reply'), __('Leave a Reply for %s' ) ); ?></h3>
+<h4 class="comments2"><?php comment_form_title( __('Leave a Reply'), __('Leave a Reply for %s' ) ); ?></h4>
 
 <div id="cancel-comment-reply"> 
 	<small><?php cancel_comment_reply_link() ?></small>

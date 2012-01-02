@@ -75,7 +75,7 @@
                 	    { custom_menu(); }
                 	?>
                 	<li><a href="#" rel="toggle[search]" title="">Search</a></li>
-                	<li class="outside"><a href="/thedoersproject/theblog/ ?>" title="" >Go to Blog</a></li>
+                	<li class="outside"><a href="/thedoersproject/theblog/" title="" >Go to Blog</a></li>
                 </ul>
             </div>
         </div>

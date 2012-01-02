@@ -63,13 +63,6 @@ function imbalance_comments($comment, $args, $depth) {
 
 
 // ==========================
-// = Include Photo-Galleria =
-// ==========================
-if ( get_option('imbalance_gallery_off') == 'checked') { /* do nothing */ } else { include TEMPLATEPATH . '/js/photo-galleria/photo-galleria.php'; }  
-
- 
-
-// ==========================
 // = Include Twitter widget =
 // ==========================
 include TEMPLATEPATH . '/js/twitter/twitter.php';
@@ -141,13 +134,6 @@ function themeoptions_page()
 <tr>
     <td valign="top" width="50%"><p><label for="excln"><strong>Excerpt lenght (in words)</strong></label><br /><input type="text" name="excln" id="excln" size="32" value="<?php echo get_option('imbalance_excln'); ?>"/><p><small><strong>Dafault value:</strong><em>35<br />- clean the field to disable excerpt completely<br />- automatically disabled if advanced-excerpt plugin is installed</em></small></p>
     </td>
-
-    <td valign="top"width="50%">
-	<p><input type="checkbox" name="gallery_off" id="gallery_off" <?php echo get_option('imbalance_gallery_off'); ?> />
-	<label for="gallery_off"><strong>Disable jQuery Gallery?</strong><br /></label>
-	</p>
-	<p><small><em>Select the checkbox to disable jQuery Photo-Galleria<br />on your posts and pages in favour of WordPress photo gallery</em></small></p>
-	<br />
 	<p><input type="checkbox" name="sidebar_off" id="sidebar_off" <?php echo get_option('imbalance_sidebar_off'); ?> />
 	<label for="sidebar_off"><strong>Disable Featured Posts on top of Sidebar?</strong><br /></label></p>
 	<p><small><em>Select the checkbox to disable featured posts display on top of your sidebar</em></small></p>	
