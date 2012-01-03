@@ -11,7 +11,4 @@
        		jQuery("#top").slideto({highlight: false});
        	});
        	
-       	jQuery("#top").fadeIn(500);
-       	jQuery("#menu").fadeIn(900);
-       	
     });

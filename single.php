@@ -3,23 +3,33 @@
             <div id="main">
               <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 				<div class="entry">
-               <!-- <div class="postmetadata">
-                    <span>Published by</span> <?php the_author() ?><br />
-                    <?php printf(__('<span>Filled under:</span> %s'), get_the_category_list(', ')); ?><br />
-					<?php comments_popup_link(__('No Comments'), __('1 Comment'), __('% Comments'), '', __('Comments Closed') ); ?><br />
-                    <?php edit_post_link(__('[Edit this entry]'), '<br />', ''); ?>
-                </div>-->
+				
+				<?php if ( get_field('identifer') ): ?>
                 <div class="identifer">
                 	<img src="<?php the_field('identifer'); ?>" alt="" />
                 </div>
-              
+              	<?php else: ?>
+              	<div class="identifer">
+              		<img src="<?php bloginfo('template_url'); ?>/images/default-identifer.jpg" alt="" />
+              	</div>
+              	<?php endif; ?>
+              	
                 <div class="articlehead">
                 	<div class="main">
 	                <h1><?php the_title(); ?></h1>
+	                <?php if ( get_field('subtitle') ): ?>
 	                <h2><?php the_field('subtitle'); ?></h2>
+	                <?php endif; ?>
 	           		</div>
 	                <div class="info">
-	                <h3 class="link"><a href="<?php the_field('project_link'); ?>" title="<?php the_title(); ?>">go to project</a></h3>
+	                
+	                <h3 class="link">
+	                	<?php if ( get_field('project_link') ): ?>
+	                		<a href="<?php the_field('project_link'); ?>" title="<?php the_title(); ?>">go to project</a>
+	                	<?php else: ?>
+	                		<a href="<?php the_permalink(); ?>" title="There isn't still a website">No website</a>
+	                	<?php endif; ?>
+	               </h3>
 	               
 	                <div class="postmetadata"><?php the_tags(__('<span>Tagged in:</span>') . ' ', ', ', '<br />'); ?>
 	                                    <h4>Share this article</h4>
@@ -39,37 +49,41 @@
                 </div>
                 
                 <div class="article" id="post-<?php the_ID(); ?>">
-                <h3><?php the_field("status"); ?></h3>  5
+                <h3><?php the_field("status"); ?></h3>
                     <?php the_content(); ?>
                 </div>
                 <div class="side">
-                	<?php
-                				if ( has_post_thumbnail() ) { ?>
-                	                    	<?php 
-                	                    	$imgsrcparam = array(
-                							'alt'	=> trim(strip_tags( $post->post_excerpt )),
-                							'title'	=> trim(strip_tags( $post->post_title )),
-                							);
-                	                    	$thumbID = get_the_post_thumbnail( $post->ID, 'background', $imgsrcparam ); ?>
-                	                        <div class="preview"><a href="<?php the_permalink() ?>"><?php echo "$thumbID"; ?></a></div>
-                	
-                	                    
-                	                    <?php } else {?>
-                	                        <div class="preview"><a href="<?php the_permalink() ?>"><img src="<?php bloginfo('template_url'); ?>/images/default-thumbnail.jpg" alt="<?php the_title(); ?>" /></a></div>
-                	                    <?php } ?>
-                	<div class="info">                   
-                	                  
-                	                    
-                	<h4> Related Links</h4>
-                	<ul>
-                	<?php while(the_repeater_field('link')): ?>
-                	    <li><a href="<?php the_sub_field('url'); ?>" title="<?php the_sub_field('title'); ?>"><?php the_sub_field('title'); ?></a></li>
-                	<?php endwhile; ?>
-                	</ul>
+                	<?php if ( has_post_thumbnail() ) : ?>
+	                    	<?php 
+	                    	$imgsrcparam = array(
+							'alt'	=> trim(strip_tags( $post->post_excerpt )),
+							'title'	=> trim(strip_tags( $post->post_title )),
+							);
+	                    	$thumbID = get_the_post_thumbnail( $post->ID, 'background', $imgsrcparam ); ?>
+	                        <div class="preview"><a href="<?php the_permalink() ?>"><?php echo "$thumbID"; ?></a></div>
+	                    <?php else :?>
+	                        <div class="preview"><a href="<?php the_permalink() ?>"><img src="<?php bloginfo('template_url'); ?>/images/default-thumbnail.jpg" alt="<?php the_title(); ?>" /></a></div>
+	                    <?php endif; ?>
+	                 <?php if ( get_field('link') ): ?>   
+                	<div class="info">                                      
+                		<h4> Related Links</h4>
+                		<ul>
+                		<?php while(the_repeater_field('link')): ?>
+                		    <li><a href="<?php the_sub_field('url'); ?>" title="<?php the_sub_field('title'); ?>"><?php the_sub_field('title'); ?></a></li>
+                		<?php endwhile; ?>
+                		</ul>
                 	</div>
+                	<?php endif; ?>
                 </div>
+                
+                <?php if ( get_field('gallery_short_code') ): ?>
                 <div class="gallery"><?php echo do_shortcode('[nivoslider slug="'.get_field("gallery_short_code").'"]'); ?></div>
+                <?php endif; ?>
+                
+                <?php if ( get_field('video_link') ): ?>
                 <div class="video"><iframe src="http://player.vimeo.com/video/<?php the_field('video_link'); ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" width="580" height="326" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+                <?php endif; ?>
+                
                 <div id="comments">
 					<?php comments_template(); ?>
                 </div>
@@ -78,9 +92,15 @@
                 <h1 id="error"><?php _e("Sorry, but you are looking for something that isn&#8217;t here."); ?></h1>
             <?php endif; ?>
             </div>    
+            <?php if ( get_field('identifer') ): ?>
             <div class="identifer">
             	<img src="<?php the_field('identifer'); ?>" alt="" />
-            </div>     
+            </div>
+            	<?php else: ?>
+            	<div class="identifer">
+            		<img src="<?php bloginfo('template_url'); ?>/images/default-identifer.jpg" alt="" />
+            	</div>
+            	<?php endif; ?>    
             </div>
 			
 <?php get_footer(); ?>

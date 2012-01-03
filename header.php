@@ -25,7 +25,7 @@
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
 	<?php
-		if( is_home() ) {
+		if( is_home() || is_search() ) {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('grid', get_template_directory_uri() . '/js/grid.js', 'jquery', false);
 		}
