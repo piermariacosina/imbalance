@@ -476,8 +476,10 @@ h1 {
 }
 
 .single .identifer {
-	width: 945px;
+	width: 939px;
 	height: 80px;
+	margin-left: 3px;
+	margin-right: 3px;
 	margin-top: 12px;
 	margin-bottom: 75px;
 }
