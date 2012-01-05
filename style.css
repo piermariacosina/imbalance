@@ -265,13 +265,17 @@ li.article {
 
 .single .article ul, .single .article ol {
 	margin-bottom:15px;
-	margin-left: 165px;
+	margin-left: 50px;
+	margin-right: 30px;
 	list-style:square inside none;
+	font-family: TitilliumText22LThin;
+	font-size: 14px;
 }
 
 .single .article ul ul, .single .article ol ol, .single .article ul ul ul, .single .article ol ol ol{
 	margin-bottom:15px;
 	margin-left: 30px;
+	margin-right: 30px;
 	list-style:square inside none;
 }
 .article ul {
@@ -280,6 +284,7 @@ li.article {
 
 .article ul ul, .article ul ul ul {
 	margin-left: 15px;
+	margin-right: 30px;
 }
 
 .article ol {
