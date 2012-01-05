@@ -18,7 +18,11 @@
                     <?php } else {?>
                         <div class="preview"><a href="<?php the_permalink() ?>"><img src="<?php bloginfo('template_url'); ?>/images/default-thumbnail.jpg" alt="<?php the_title(); ?>" /></a></div>
                     <?php } ?>
-
+                    <?php if ( get_field("appear")): ?>
+						<div class="status">
+						<img src="<?php bloginfo('template_url'); ?>/images/status/<?php echo assign_status(get_field("status")); ?>" />
+						</div>
+					<? endif; ?>
                     <div class="article-over">
                       <h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
                       <?php the_excerpt(); ?>

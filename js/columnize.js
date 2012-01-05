@@ -10,5 +10,8 @@
        	jQuery("#gotop").click(function(){
        		jQuery("#top").slideto({highlight: false});
        	});
+       	jQuery(".add_comment").click(function(){
+       		jQuery("#respond").slideto({highlight: false});
+       	});
        	
     });

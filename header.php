@@ -68,7 +68,7 @@
             </div>-->
             <div id="cats">
             	<ul>
-                	<li><a href="#" rel="toggle[projects]" title="" <?php if ( is_front_page()) { ?> class="active"<?php } ?> >Projects</a></li>
+                	<li><a href="#" rel="toggle[projects]" title="" <?php if ( is_front_page() || is_singular()) { ?> class="active"<?php } ?> >Projects</a></li>
                 	<?php if ( function_exists( 'wp_nav_menu' ) ) {
                 		wp_nav_menu( array( 'menu' => 'Main menu' , 'container' => '' , 'fallback_cb'=> 'custom_menu' , 'depth' => 1 ) ); }
                 	else

@@ -170,4 +170,29 @@ function themeoptions_update()
 	update_option('imbalance_sidebar_off', 	$display);
 
 }
+
+function assign_status($status) {
+	switch($status){
+		case "New":
+		$source = "new.png" ;
+		break;
+		case "Updated":
+		$source = "updated.png" ;
+		break;
+		case "In Dev":
+		$source = "indev.png" ;
+		break;
+		case "Prototype":
+		$source = "prototype.png" ;
+		break;
+		case "Released":
+		$source = "released.png" ;
+		break;
+		default:
+		$source = "angolo.png" ;
+		break;
+	}
+	
+	return $source;
+}
 ?>

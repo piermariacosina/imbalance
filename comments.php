@@ -20,9 +20,9 @@
 <?php if ( have_comments() ) : ?>
     <a name="comments"></a>
 	<h3><?php comments_number(__('No Comments'), __('One Comment'), __('% Comments'));?></h3>
-
+	<div class="add_comment"><a>Submit yours</a></div>
 	<div class="navigation">
-		<div class="alignleft"><?php previous_comments_link() ?></div>
+		<div class="alignleft"><?php previous_comments_link("test") ?></div>
 		<div class="alignright"><?php next_comments_link() ?></div>
 	</div>
 
@@ -30,7 +30,7 @@
 
 
 
-<?php wp_list_comments(array('avatar_size' => '55', 'callback' => 'imbalance_comments'  )); ?>
+<?php wp_list_comments(array('avatar_size' => '55', 'callback' => 'imbalance_comments', 'per_page'=>'10'  )); ?>
 
 
 	</ol>

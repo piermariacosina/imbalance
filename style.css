@@ -31,7 +31,7 @@ a:hover {
 p {
 	margin-bottom:15px !important;
 	font-family: TitilliumText22LThin;
-	font-weight: lighter;
+	font-size: 14px;
 }
 blockquote {
 	font-style:italic !important;
@@ -130,14 +130,14 @@ caption, th, td {font-weight:strong;text-align:left;}
 	text-decoration:none !important;
 }
 #cats li a:hover, #cats li a.active {
-	border-bottom:solid 1px #FF398A;
+	border-bottom:solid 1px #000;
 }
 
 #projects, #search {
 	width:945px;
 	overflow:hidden;
 	padding:0;
-	border-bottom:solid 1px #FF398A;
+	border-bottom:solid 1px #000;
 }
 #projects ul li {
 	font-size:12px;
@@ -165,6 +165,15 @@ caption, th, td {font-weight:strong;text-align:left;}
 	color: #e5e5e5;
 }
 
+.status {
+	position: absolute;
+	display: block;
+	top: -5px;
+	z-index: 999;
+	left: 202px;
+	
+}
+
 .outside {
 	padding: 0px 10px 0px 10px;
 	background-color: #000;
@@ -175,7 +184,8 @@ caption, th, td {font-weight:strong;text-align:left;}
 }
 
 .outside a:hover{
-	color: #FF398A;
+	text-decoration: none;
+	border-bottom:solid 1px #000;
 }
 
 #main {
@@ -218,7 +228,8 @@ li.article {
 	clear: both;
 	float:left;
     width: 80%;
-max-width: 640px;
+    margin-bottom: 35px;
+	max-width: 635px;
 }
 
 .single .info {
@@ -234,11 +245,12 @@ max-width: 640px;
     float: right;
     margin-bottom: 35px;
     width: 20%;
-	min-width: 305px;
+	min-width: 310px;
+	position: relative;
 	}
 
 .side .info {
-	width: 100%;
+	width: 276px;
 	background-color: #F2F2F2;
  	float: left;
 	padding: 15px;
@@ -277,15 +289,8 @@ max-width: 640px;
 	/*margin-bottom:15px;*/
 }
 
-.article p a, .commentlist p a {
-	border-bottom:1px solid #FF3706;
-	text-decoration:none;
-}
-.article p a:hover, .commentlist p a:hover {
-border-bottom: 1px solid;
-text-decoration:none;
-color: #FF3706;
-}
+
+
 li.article .postmetadata {
 	color:#555;
 	font-size:11px;
@@ -307,6 +312,7 @@ li.article h2 a {
 	text-decoration:none !important;
 }
 .preview {
+	width: 305px;
 	position:relative;
 }
 .article-over {
@@ -452,7 +458,7 @@ h1 {
 }
 
 #main h3 a:hover,.single h3 {
-	color: #FF398A;
+	color: #000;
 }
 
 
@@ -530,12 +536,11 @@ h1 {
 #main a {
 	font-family: TitilliumText22LThin;
 	font-size: 14px;
-	font-weight: lighter;
-	color:#FF398A;
-	text-decoration:none ;
+	text-decoration: none;
+	border-bottom: 1px solid #E5E5E5;
 }
 #main a:hover{
-	text-decoration:underline;
+	border-bottom: 1px solid #000;
 }
 .single .article .postmetadata {
 	width:auto;
@@ -546,6 +551,18 @@ h1 {
 
 .side ul li{
 	margin-top: 4px;
+}
+
+.postmetadata a, .info a{
+	font-weight: lighter;
+}
+
+.info h3 a{
+	border-bottom: none !important;
+}
+
+.info h3 a:hover,.info h3 a:visited{
+	color: #FF398A !important;
 }
 
 .page h1 {
@@ -594,6 +611,7 @@ h1 {
 	border-top: 1px solid #EEE;
 	margin-left: 30px;
 	clear: both;
+	width: 580px;
 }
 #comments h3 {
 	font-size:16px;
@@ -634,21 +652,23 @@ li.comment {
 }
 #respond {
 	padding-bottom:15px;
+	width: 580px;
 }
 #respond textarea {
 	border:solid 1px #eeeeee;
 	padding:5px 10px;
 	margin-top:15px;
 	margin-bottom:15px;
+	width: 580px;
 }
 .login {
+	font-family: TitilliumText22LThin;
+	font-weight: lighter;
+	font-size: 12px;
 	float:right;
 	font-size:11px;
 }
-.login a {
-	color:#ff3706 !important;
-	text-decoration:none;
-}
+
 
 #author, #email, #url {
 	float:left;
@@ -657,7 +677,7 @@ li.comment {
 	border:solid 1px #eeeeee;
 }
 #author:focus, #email:focus, #url:focus, #respond textarea:focus {
-	border:solid 1px #ff3706;
+	border:solid 1px #000;
 }
 #author, #email {
 	margin-right:6px;

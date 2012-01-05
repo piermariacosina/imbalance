@@ -43,16 +43,18 @@
 	                                    <br />
 	                
 	                                    <?php comments_rss_link('RSS 2.0 feed'); ?> | <a href="<?php trackback_url(); ?>">Trackback</a>
+	                                    
+	                                     <h3><?php the_field("status"); ?></h3>
 	                 </div>
 	                 </div>
 	              
                 </div>
                 
                 <div class="article" id="post-<?php the_ID(); ?>">
-                <h3><?php the_field("status"); ?></h3>
                     <?php the_content(); ?>
                 </div>
                 <div class="side">
+                	
                 	<?php if ( has_post_thumbnail() ) : ?>
 	                    	<?php 
 	                    	$imgsrcparam = array(
@@ -64,23 +66,36 @@
 	                    <?php else :?>
 	                        <div class="preview"><a href="<?php the_permalink() ?>"><img src="<?php bloginfo('template_url'); ?>/images/default-thumbnail.jpg" alt="<?php the_title(); ?>" /></a></div>
 	                    <?php endif; ?>
-	                 <?php if ( get_field('link') ): ?>   
-                	<div class="info">                                      
-                		<h4> Related Links</h4>
-                		<ul>
-                		<?php while(the_repeater_field('link')): ?>
-                		    <li><a href="<?php the_sub_field('url'); ?>" title="<?php the_sub_field('title'); ?>"><?php the_sub_field('title'); ?></a></li>
-                		<?php endwhile; ?>
-                		</ul>
-                	</div>
+	                 <?php if ( get_field('link') || get_field('related_projects') ): ?>   
+	                	<div class="info"> 
+	                		 <?php if ( get_field('link')): ?>                                     
+		                		<h4> Related Links</h4>
+		                		<ul>
+		                		<?php while(the_repeater_field('link')): ?>
+		                		    <li><a href="<?php the_sub_field('url'); ?>" title="<?php the_sub_field('title'); ?>"><?php the_sub_field('title'); ?></a></li>
+		                		<?php endwhile; ?>
+		                		</ul>
+	                		<?php endif; ?>
+	                		<?php if ( get_field('related_projects')): ?> 
+		                		<h4> Related Projects</h4>
+		                		<ul>
+		                		<?php foreach(get_field('related_projects') as $post_object): ?>
+		                		    <li><a href="<?php echo get_permalink($post_object->ID); ?>"><?php echo get_the_title($post_object->ID) ?></a></li>
+		                		<?php endforeach; ?>
+		                		</ul>
+	                		<?php endif; ?>
+	                	</div>
                 	<?php endif; ?>
+                	<div class="status">
+                		<img src="<?php bloginfo('template_url'); ?>/images/status/<?php echo assign_status(get_field("status")); ?>" />
+                	</div>
                 </div>
                 
                 <?php if ( get_field('gallery_short_code') ): ?>
                 <div class="gallery"><?php echo do_shortcode('[nivoslider slug="'.get_field("gallery_short_code").'"]'); ?></div>
                 <?php endif; ?>
                 
-                <?php if ( get_field('video_link') ): ?>
+                <?php if ( get_field('video_link') || get_field('video_link')=="none"  ): ?>
                 <div class="video"><iframe src="http://player.vimeo.com/video/<?php the_field('video_link'); ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" width="580" height="326" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
                 <?php endif; ?>
                 
