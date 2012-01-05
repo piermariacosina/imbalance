@@ -652,14 +652,14 @@ li.comment {
 }
 #respond {
 	padding-bottom:15px;
-	width: 580px;
+	width: 100%;
 }
 #respond textarea {
 	border:solid 1px #eeeeee;
 	padding:5px 10px;
 	margin-top:15px;
 	margin-bottom:15px;
-	width: 580px;
+	width: 96%;
 }
 .login {
 	font-family: TitilliumText22LThin;

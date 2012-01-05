@@ -93,7 +93,7 @@
 
 <?php endif; ?>
 
-<textarea name="comment" id="comment" cols="100%" rows="7" tabindex="4"></textarea>
+<textarea name="comment" id="comment" cols="1" rows="7" tabindex="4"></textarea>
 
 
 

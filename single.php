@@ -44,7 +44,6 @@
 	                
 	                                    <?php comments_rss_link('RSS 2.0 feed'); ?> | <a href="<?php trackback_url(); ?>">Trackback</a>
 	                                    
-	                                     <h3><?php the_field("status"); ?></h3>
 	                 </div>
 	                 </div>
 	              
