@@ -195,4 +195,21 @@ function assign_status($status) {
 	
 	return $source;
 }
+
+function the_contributors(){
+	echo get_contributors();
+}
+
+function get_contributors() {
+global $wpdb;
+
+$authors = $wpdb->get_results("SELECT ID, user_nicename from $wpdb->users ORDER BY display_name");
+$author_list ="";
+foreach($authors as $author) {
+$author_list .= '<li class="team_member"><div class="member"><a href="'.get_the_author_meta("user_url", $author->ID).'">'.get_avatar($author->ID).'</a><div><a href="'.get_the_author_meta("user_url", $author->ID).'">'.get_the_author_meta("first_name", $author->ID).' '.get_the_author_meta("last_name", $author->ID).'</a><p>'.get_the_author_meta("description", $author->ID).'</p></div></div><div class="member-over"><a class="link_block" href="'.get_the_author_meta("user_url", $author->ID).'"></a><p>Personal<br />Info</p></div></li>';
+}
+return $author_list;
+}
+
+
 ?>

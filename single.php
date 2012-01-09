@@ -31,7 +31,7 @@
 	                	<?php endif; ?>
 	               </h3>
 	               
-	                <div class="postmetadata"><?php the_tags(__('<span>Tagged in:</span>') . ' ', ', ', '<br />'); ?>
+	                <div class="postmetadata">
 	                                    <h4>Share this article</h4>
 	                                    <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>%26t=<?php the_title(); ?>">Facebook</a>, <a href="http://digg.com/submit?phase=2&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" title="Digg this!">Digg This</a>, <a href="http://del.icio.us/post?url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" title="Bookmark on Delicious.">Del.icio.us</a>, <a href="http://www.stumbleupon.com/submit?url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" title="StumbleUpon.">StumbleUpon</a>, 
 	                                    <?php if (function_exists('wp_get_shortlink')) { ?>
@@ -67,6 +67,7 @@
 	                    <?php endif; ?>
 	                 <?php if ( get_field('link') || get_field('related_projects') ): ?>   
 	                	<div class="info"> 
+	                		<div id="related_links">
 	                		 <?php if ( get_field('link')): ?>                                     
 		                		<h4> Related Links</h4>
 		                		<ul>
@@ -75,6 +76,8 @@
 		                		<?php endwhile; ?>
 		                		</ul>
 	                		<?php endif; ?>
+	                		</div>
+	                		<div id="related_projects">
 	                		<?php if ( get_field('related_projects')): ?> 
 		                		<h4> Related Projects</h4>
 		                		<ul>
@@ -83,6 +86,10 @@
 		                		<?php endforeach; ?>
 		                		</ul>
 	                		<?php endif; ?>
+	                		</div>
+	                		<div id="tags">
+	                		<?php the_tags(__('<h4> Tagged in:</h4>') . ' ', ', ', '<br />'); ?>
+	                		</div>
 	                	</div>
                 	<?php endif; ?>
                 	<div class="status">

@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/reset.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fonts/fonts.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?><?php echo '?' . filemtime( get_stylesheet_directory() . '/style.css');?>" type="text/css" media="screen" />
 	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"><![endif]-->
     <!--[if IE 7]>
         <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/ie7.css" type="text/css" media="screen" />
@@ -22,10 +22,11 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php wp_enqueue_script('jquery'); ?>
+	<?php wp_enqueue_script('team', get_template_directory_uri() . '/js/team.js', 'jquery', false);?>
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
 	<?php
-		if( is_home() || is_search() ) {
+		if( is_front_page() || is_search() ) {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('grid', get_template_directory_uri() . '/js/grid.js', 'jquery', false);
 		}
@@ -33,7 +34,7 @@
     <script src="<?php bloginfo('template_url'); ?>/js/columnizer.js" type="text/javascript"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/columnize.js" type="text/javascript"></script>   
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/animatedcollapse.js"></script>
-    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/collapse.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/collapse.js<?php echo '?' . filemtime( get_stylesheet_directory() . '/js/collapse.js');?>"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.random.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.slideto.min.js"></script>
 </head>
@@ -66,9 +67,9 @@
                     <li><a id="facebook" href="<?php echo get_option('imbalance_fbkurl'); ?>" title="">Facebook</a></li>
                 </ul>
             </div>-->
-            <div id="cats">
+            <div class="cats">
             	<ul>
-                	<li><a href="#" rel="toggle[projects]" title="" <?php if ( is_front_page() || is_singular()) { ?> class="active"<?php } ?> >Projects</a></li>
+                	<li><a href="#" rel="toggle[projects]" title="" <?php if ( is_front_page()) { ?> class="active"<?php } ?> >Projects</a></li>
                 	<?php if ( function_exists( 'wp_nav_menu' ) ) {
                 		wp_nav_menu( array( 'menu' => 'Main menu' , 'container' => '' , 'fallback_cb'=> 'custom_menu' , 'depth' => 1 ) ); }
                 	else
